@@ -1,0 +1,4 @@
+{
+  "transform": {},
+  "testPathIgnorePatterns": ["__tests__/jest-extensions.js"]
+}
