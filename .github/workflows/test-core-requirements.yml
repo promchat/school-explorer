@@ -27,4 +27,5 @@ jobs:
         format: json
     - name: Run jest
       run: |
+        npx http-server --silent --port 8080 &
         npm test --color=true
