@@ -79,7 +79,7 @@ describe('The schoolNameFilter', () => {
       // They could be listening on either `input` or `change`.
       window.schoolNameFilter.dispatchEvent(new Event('input'));
       window.schoolNameFilter.dispatchEvent(new Event('change'));
-      const filteredLength = Object.values(window.schoolMap._layers).filter(l => 'feature' in l).length;
+      const filteredLength = Object.values(window.schoolMap._layers).filter(l => 'feature' in l && l.feature.geometry.type === 'Point').length;
       return filteredLength;
     });
     expect(filteredLength).toBeCloseTo(12, -1);
@@ -91,7 +91,7 @@ describe('The schoolNameFilter', () => {
       // They could be listening on either `input` or `change`.
       window.schoolNameFilter.dispatchEvent(new Event('input'));
       window.schoolNameFilter.dispatchEvent(new Event('change'));
-      const filteredLength = Object.values(window.schoolMap._layers).filter(l => 'feature' in l).length;
+      const filteredLength = Object.values(window.schoolMap._layers).filter(l => 'feature' in l && l.feature.geometry.type === 'Point').length;
       return filteredLength;
     });
     expect(filteredLength).toBe(0);
@@ -109,7 +109,7 @@ describe('The schoolNameFilter', () => {
       window.schoolNameFilter.dispatchEvent(new Event('input'));
       window.schoolNameFilter.dispatchEvent(new Event('change'));
 
-      const finalLength = Object.values(window.schoolMap._layers).filter(l => 'feature' in l).length;
+      const finalLength = Object.values(window.schoolMap._layers).filter(l => 'feature' in l && l.feature.geometry.type === 'Point').length;
       return finalLength;
     });
     expect(finalLength).toBeCloseTo(325, -1);
@@ -188,7 +188,7 @@ describe('The school grade level filters', () => {
       const grade4 = Array.from(window.schoolGradeFilters).find(cb => cb.value.includes('4'));
       grade4.checked = true;
       grade4.dispatchEvent(new Event('change'));
-      const filteredLength = Object.values(window.schoolMap._layers).filter(l => 'feature' in l).length;
+      const filteredLength = Object.values(window.schoolMap._layers).filter(l => 'feature' in l && l.feature.geometry.type === 'Point').length;
       return filteredLength;
     });
     expect(filteredLength).toBeCloseTo(210, -1);
@@ -202,7 +202,7 @@ describe('The school grade level filters', () => {
       grade4.dispatchEvent(new Event('change'));
       grade9.checked = true;
       grade9.dispatchEvent(new Event('change'));
-      const filteredLength = Object.values(window.schoolMap._layers).filter(l => 'feature' in l).length;
+      const filteredLength = Object.values(window.schoolMap._layers).filter(l => 'feature' in l && l.feature.geometry.type === 'Point').length;
       return filteredLength;
     });
     expect(filteredLength).toBeCloseTo(19, -1);
@@ -218,7 +218,7 @@ describe('The school grade level filters', () => {
       grade4.checked = false;
       grade4.dispatchEvent(new Event('change'));
 
-      const finalLength = Object.values(window.schoolMap._layers).filter(l => 'feature' in l).length;
+      const finalLength = Object.values(window.schoolMap._layers).filter(l => 'feature' in l && l.feature.geometry.type === 'Point').length;
       return finalLength;
     });
     expect(finalLength).toBeCloseTo(325, -1);
@@ -290,7 +290,7 @@ describe('The school grade level filters', () => {
       const ms = Array.from(window.schoolLevelFilters).find(cb => cb.value.toLowerCase().includes('mid'));
       ms.checked = true;
       ms.dispatchEvent(new Event('change'));
-      const filteredLength = Object.values(window.schoolMap._layers).filter(l => 'feature' in l).length;
+      const filteredLength = Object.values(window.schoolMap._layers).filter(l => 'feature' in l && l.feature.geometry.type === 'Point').length;
       return filteredLength;
     });
     expect(filteredLength).toBeCloseTo(182, -1);
@@ -304,7 +304,7 @@ describe('The school grade level filters', () => {
       ms.dispatchEvent(new Event('change'));
       hs.checked = true;
       hs.dispatchEvent(new Event('change'));
-      const filteredLength = Object.values(window.schoolMap._layers).filter(l => 'feature' in l).length;
+      const filteredLength = Object.values(window.schoolMap._layers).filter(l => 'feature' in l && l.feature.geometry.type === 'Point').length;
       return filteredLength;
     });
     expect(filteredLength).toBeCloseTo(30, -1);
@@ -320,7 +320,7 @@ describe('The school grade level filters', () => {
       ms.checked = false;
       ms.dispatchEvent(new Event('change'));
 
-      const finalLength = Object.values(window.schoolMap._layers).filter(l => 'feature' in l).length;
+      const finalLength = Object.values(window.schoolMap._layers).filter(l => 'feature' in l && l.feature.geometry.type === 'Point').length;
       return finalLength;
     });
     expect(finalLength).toBeCloseTo(325, -1);
