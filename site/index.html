@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>School Explorer</title>
+        
+        
+        <!-- Put the leaflet library at the end of the head -->
+        <!-- My CSS goes after the other external libraries CSS are loaded -->
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+        integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+        crossorigin=""/>
+
+        <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+        integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+        crossorigin=""></script>
+
+        <link rel = "stylesheet" href="css/styles.css">
+        
+    </head>
+
+    
+
+        <!--Defult styles for leaflet-->
+    <body>
+        
+        <h1 id="schoolex">School Explorer</h1>
+
+        <div id = "school-map"></div>
+
+        <div class="content-container">
+            <div class="map-container">
+              <div id="school-map"></div>
+            </div>
+            <div class="list-container">
+
+              <label><input type="checkbox" class="cb" value="Grade K">Grade K</label>
+              <label><input type="checkbox" class="cb" value="Grade 1">Grade 1</label>
+              <label><input type="checkbox" class="cb" value="Grade 2">Grade 2</label>
+              <label><input type="checkbox" class="cb" value="Grade 3">Grade 3</label>
+              <label><input type="checkbox" class="cb" value="Grade 4">Grade 4</label>
+              <label><input type="checkbox" class="cb" value="Grade 5">Grade 5</label>
+              <label><input type="checkbox" class="cb" value="Grade 6">Grade 6</label>
+              <label><input type="checkbox" class="cb" value="Grade 7">Grade 7</label>
+              <label><input type="checkbox" class="cb" value="Grade 8">Grade 8</label>
+              <label><input type="checkbox" class="cb" value="Grade 9">Grade 9</label>
+              <label><input type="checkbox" class="cb" value="Grade 10">Grade 10</label>
+              <label><input type="checkbox" class="cb" value="Grade 11">Grade 11</label>
+              <label><input type="checkbox" class="cb" value="Grade 12">Grade 12</label>
+              
+              <input type="text" id="school-name-input" placeholder="Search Schools...">
+      
+              <ul id="school-list">
+              </ul>
+            </div>
+          </div>
+
+        <!-- Put the JS at the end of the body -->
+        <!-- My JS goes after the other external libraries are loaded -->
+
+        
+
+        <!-- Suggested to import own JS as module type -->
+        <!-- make this module to be a local variable instead of the global scope -->
+        
+        <script type = "module" src = "js/main.js"></script>
+
+    </body>
+
+</html>
